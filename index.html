@@ -2,48 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="login.css">
   <title>Unilibras</title>
 </head>
 <body>
 
-
 <form id="userDataForm">
-
-
   <img src="assets/mao.png" alt="Logo da unilibras">
 
   <label for="name">Nome:</label>
-  <input type="text" id="name" name="name" required><br><br>
+  <input type="text" id="name" name="name" required>
 
   <label for="course">Curso:</label>
   <input list="courses" id="course" name="course" required>
   <datalist id="courses">
     <option value="Administração">
-    <option value="Arquitetura e Urbanismo"></option>
-    <option value="Ciência da Computação">
-    <option value="Ciência Política"></option>
-    <option value="Ciências Biológicas - Bacharelado"></option>
-    <option value="Ciências Biológicas - Licenciatura"></option>
-    <option value="Ciências Contábeis"></option>
-    <option value="Ciências Econômicas"></option>
-    
-    <option value="Engenharia Civil"></option>
-  </datalist><br><br>
+    <option value="Arquitetura e Urbanismo">
+  </datalist>
 
   <label for="period">Período:</label>
-  <input type="text" id="period" name="period" required><br><br>
+  <input type="text" id="period" name="period" required>
 
   <label for="shift">Turno:</label>
   <select id="shift" name="shift" required>
     <option value="Manhã">Manhã</option>
     <option value="Tarde">Tarde</option>
     <option value="Noite">Noite</option>
-  </select><br><br>
+  </select>
 
   <button type="submit">Enviar</button>
 </form>
-
 
 </body>
 </html>
