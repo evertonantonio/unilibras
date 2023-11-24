@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="login.css" id="stylesheet">
+  <title>Unilibrasr</title>
+</head>
+<body>
+
+<button onclick="toggleDarkMode()" id="themeButton">Modo Escuro</button>
+
+<form id="userDataForm">
+
+
+  <img src="assets/mao.png" alt="Logo da unilibras">
+
+  <label for="name">Nome:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="course">Curso:</label>
+  <input list="courses" id="course" name="course" required>
+  <datalist id="courses">
+    <option value="Administração">
+    <option value="Arquitetura e Urbanismo"></option>
+    <option value="Ciência da Computação">
+    <option value="Ciência Política"></option>
+    <option value="Ciências Biológicas - Bacharelado"></option>
+    <option value="Ciências Biológicas - Licenciatura"></option>
+    <option value="Ciências Contábeis"></option>
+    <option value="Ciências Econômicas"></option>
+    
+    <option value="Engenharia Civil"></option>
+  </datalist><br><br>
+
+  <label for="period">Período:</label>
+  <input type="text" id="period" name="period" required><br><br>
+
+  <label for="shift">Turno:</label>
+  <select id="shift" name="shift" required>
+    <option value="Manhã">Manhã</option>
+    <option value="Tarde">Tarde</option>
+    <option value="Noite">Noite</option>
+  </select><br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+
+
+<script>
+    function toggleDarkMode() {
+      const stylesheet = document.getElementById('stylesheet');
+      const themeButton = document.getElementById('themeButton');
+
+      if (stylesheet.getAttribute('href') === 'login.css') {
+        stylesheet.setAttribute('href', 'dark-login.css');
+        localStorage.setItem('theme', 'dark');
+        themeButton.innerText = 'Modo Claro'; // Altera o texto do botão
+      } else {
+        stylesheet.setAttribute('href', 'login.css');
+        localStorage.setItem('theme', 'light');
+        themeButton.innerText = 'Modo Escuro'; // Altera o texto do botão
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.getElementById('stylesheet').setAttribute('href', 'dark-login.css');
+      document.getElementById('themeButton').innerText = 'Modo Claro'; // Altera o texto do botão
+    }
+  </script>
+
+</body>
+</html>
