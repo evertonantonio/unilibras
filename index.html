@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="login.css" id="stylesheet">
+  <link rel="stylesheet" href="login.css">
   <title>Unilibras</title>
 </head>
 <body>
 
-<button onclick="toggleDarkMode()" id="themeButton">Modo Escuro</button>
 
 <form id="userDataForm">
 
@@ -45,30 +44,6 @@
   <button type="submit">Enviar</button>
 </form>
 
-
-
-<script>
-    function toggleDarkMode() {
-      const stylesheet = document.getElementById('stylesheet');
-      const themeButton = document.getElementById('themeButton');
-
-      if (stylesheet.getAttribute('href') === 'login.css') {
-        stylesheet.setAttribute('href', 'dark-login.css');
-        localStorage.setItem('theme', 'dark');
-        themeButton.innerText = 'Modo Claro'; // Altera o texto do botão
-      } else {
-        stylesheet.setAttribute('href', 'login.css');
-        localStorage.setItem('theme', 'light');
-        themeButton.innerText = 'Modo Escuro'; // Altera o texto do botão
-      }
-    }
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.getElementById('stylesheet').setAttribute('href', 'dark-login.css');
-      document.getElementById('themeButton').innerText = 'Modo Claro'; // Altera o texto do botão
-    }
-  </script>
 
 </body>
 </html>
